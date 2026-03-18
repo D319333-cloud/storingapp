@@ -18,19 +18,42 @@
 
             <div class="form-group">
                 <label for="attractie">Naam attractie:</label>
-                <input type="text" name="attractie" id="attractie" class="form-input">
+                <input type="text" name="attractie" id="attractie" class="form-input" required>
             </div>
+
             <div class="form-group">
-                <label for="type">Type</label>
-                <!-- hier komt een dropdown -->
+                <label for="type">Type:</label>
+                <select name="type" id="type" class="form-input" required>
+                    <option value="">-- Kies type --</option>
+                    <option value="Achtbaan">Achtbaan</option>
+                    <option value="Draaiende attractie">Draaiende attractie</option>
+                    <option value="Kinderattractie">Kinderattractie</option>
+                    <option value="Restaurant, cafe, etc">Restaurant, cafe, etc</option>
+                    <option value="Parkshow">Parkshow</option>
+                    <option value="Waterattractie">Waterattractie</option>
+                    <option value="Overig">Overig</option>
+                </select>
             </div>
+
             <div class="form-group">
                 <label for="capaciteit">Capaciteit p/uur:</label>
                 <input type="number" min="0" name="capaciteit" id="capaciteit" class="form-input">
             </div>
+
+            <div class="form-group">
+                <label for="prioriteit">Prio:</label>
+                <input type="checkbox" name="prioriteit" id="prioriteit">
+                <label for="prioriteit"> Melding met de prioriteit</label>
+            </div>
+
             <div class="form-group">
                 <label for="melder">Naam melder:</label>
-                <input type="text" name="melder" id="melder" class="form-input">
+                <input type="text" name="melder" id="melder" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="overige_info">Overige info:</label>
+                <input type="text" name="overige_info" id="overige_info" class="form-input">
             </div>
 
             <input type="submit" value="Verstuur melding">
