@@ -16,12 +16,15 @@
 
         <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
 
-            <div class="form-group">
+ <div class="form-group">
                 <label for="attractie">Naam attractie:</label>
+                <input type="text" name="attractie" id="attractie" class="form-input">
                 <input type="text" name="attractie" id="attractie" class="form-input" required>
             </div>
 
             <div class="form-group">
+                <label for="type">Type</label>
+                <!-- hier komt een dropdown -->
                 <label for="type">Type:</label>
                 <select name="type" id="type" class="form-input" required>
                     <option value="">-- Kies type --</option>
@@ -44,10 +47,10 @@
                 <label for="prioriteit">Prio:</label>
                 <input type="checkbox" name="prioriteit" id="prioriteit">
                 <label for="prioriteit"> Melding met de prioriteit</label>
-            </div>
 
-            <div class="form-group">
+              <div class="form-group">
                 <label for="melder">Naam melder:</label>
+                <input type="text" name="melder" id="melder" class="form-input">
                 <input type="text" name="melder" id="melder" class="form-input" required>
             </div>
 
@@ -58,9 +61,3 @@
 
             <input type="submit" value="Verstuur melding">
 
-        </form>
-    </div>
-
-</body>
-
-</html>

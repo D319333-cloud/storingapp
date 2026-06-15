@@ -1,16 +1,22 @@
 <?php
 
+//Variabelen vullen
 // Variabelen vullen
 $attractie = $_POST['attractie'];
+$capaciteit = $_POST['capaciteit'];
 $capaciteit = $_POST['capaciteit'] !== '' ? $_POST['capaciteit'] : null;
 $melder = $_POST['melder'];
 $type = $_POST['type'] ?? 'Onbekend';
 $prioriteit = isset($_POST['prioriteit']) ? 1 : 0;
 $overige_info = $_POST['overige_info'] ?? null;
 
+echo $attractie . " / " . $capaciteit . " / " . $melder;
+
+//1. Verbinding
 // Verbinding
 require_once '../../../config/conn.php';
 
+//2. Query
 // Query
 $query = "INSERT INTO meldingen (attractie, type, capaciteit, prioriteit, melder, overige_info) 
 VALUES (:attractie, :type, :capaciteit, :prioriteit, :melder, :overige_info)";
@@ -18,6 +24,7 @@ VALUES (:attractie, :type, :capaciteit, :prioriteit, :melder, :overige_info)";
 // Prepare
 $statement = $conn->prepare($query);
 
+//3. Prepare
 // Execute
 $statement->execute([
     ':attractie' => $attractie,
@@ -28,6 +35,7 @@ $statement->execute([
     ':overige_info' => $overige_info
 ]);
 
+//4. Execute
 // Redirect terug naar overzicht
 header("Location: /storingapp/resources/views/meldingen/index.php");
 exit;

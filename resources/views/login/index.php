@@ -2,7 +2,7 @@
 <html lang="nl">
 
 <head>
-    <title>StoringApp</title>
+    <title>StoringApp - Inloggen</title>
     <?php require_once '../components/head.php'; ?>
 </head>
 
@@ -12,18 +12,16 @@
 
     <div class="container home">
 
-            <form action="app/Http/Controllers/loginController.php" method="POST">
-
-
+        <form action="../../../app/Http/Controllers/loginController.php" method="POST">
 
             <div class="form-group">
                 <label for="username">Gebruikersnaam:</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" required>
             </div>
 
             <div class="form-group">
                 <label for="password">Wachtwoord:</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" required>
             </div>
 
             <input type="submit" value="Login">

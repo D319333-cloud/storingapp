@@ -159,6 +159,7 @@ th{
     margin: 1rem 0;
 }
 
+
 label{
     cursor: pointer;
     display: inline-block;
@@ -170,6 +171,30 @@ label{
     width: 600px;
 }
 
+/* Gekoppelde CSS-regels uit opdracht 7.13 */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Zorgt voor strakke randen */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+tr:nth-child(odd){
+    background-color: #ebebeb;
+}
+
+
+thead tr {
+    background-color: #d3d3d3;
+}
+
+
+tr:hover{
+    background-color: #d3d3d3;
+}
 
 
 

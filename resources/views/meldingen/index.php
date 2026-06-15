@@ -20,27 +20,51 @@
             echo "<div class='msg'>" . $_GET['msg'] . "</div>";
         } ?>
 
-        <div style="height: 300px; background: #ededed; display: flex; justify-content: center; align-items: center; color: #666666;">(hier komen de storingsmeldingen)</div>
         <div class="meldingen-overzicht">
             <?php
             require_once '../../../config/conn.php';
-            $query = "SELECT *FROM meldingen";
+            $query = "SELECT * FROM meldingen";
             $statement = $conn->prepare($query);
             $statement->execute();
             $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
+            ?>
 
-            foreach($meldingen as $melding){?>
-                <h1><?php echo $melding['attractie']; ?>
-                <h1><?php echo $melding['type']; ?>
-                <h1><?php echo $melding['capaciteit']; ?>
-                <h1><?php echo $melding['prioriteit']; ?>
-                <h1><?php echo $melding['melder']; ?>
-                <h1><?php echo $melding['overige_info']; ?>
-
-            <?php } ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attractie</th>
+                        <th>Type</th>
+                        <th>Capaciteit</th>
+                        <th>Prioriteit</th>
+                        <th>Melder</th>
+                        <th>Overige info</th>
+                        <th>Gemeld op</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($meldingen as $melding): ?>
+                        <tr>
+                            <td><?php echo $melding['attractie']; ?></td>
+                            <td><?php echo $melding['type']; ?></td>
+                            <td><?php echo $melding['capaciteit']; ?></td>
+                            <td>
+                                <?php 
+                                if($melding['prioriteit'] == 1) {
+                                    echo "Ja";
+                                } else {
+                                    echo "Nee";
+                                }
+                                ?>
+                            </td>
+                            <td><?php echo $melding['melder']; ?></td>
+                            <td><?php echo $melding['overige_info']; ?></td>
+                            <td><?php echo $melding['gemeld_op']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
     </div>
 
 </body>
-
 </html>
