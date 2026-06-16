@@ -3,7 +3,6 @@ session_start();
 if(!isset($_SESSION['user_id']))
 {
     $msg = "Je moet eerst inloggen!";
-    // Vanaf meldingen/ moet je 1 map omhoog (views/) en dan naar login/index.php
     header("Location: ../login/index.php?msg=$msg");
     exit;
 }

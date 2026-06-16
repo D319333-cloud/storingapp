@@ -14,7 +14,6 @@
     <div class="container">
         <h1>Inloggen</h1>
 
-        <!-- Het formulier verwijst naar de map waar de loginController staat -->
         <form action="../../../app/Http/Controllers/loginController.php" method="POST">
             <div class="form-group">
                 <label for="username">Gebruikersnaam:</label>

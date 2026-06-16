@@ -3,7 +3,6 @@ session_start();
 if(!isset($_SESSION['user_id']))
 {
     $msg = "Je moet eerst inloggen!";
-    // Vanaf meldingen/ moet je 1 map omhoog (views/) en dan naar login/index.php
     header("Location: ../login/index.php?msg=$msg");
     exit;
 }
@@ -32,7 +31,6 @@ if(!isset($_SESSION['user_id']))
 
         <div class="meldingen-overzicht">
             <?php
-            // Ook hier teruggezet naar 3 mappen terug
             require_once __DIR__ . '/../../../config/conn.php';
             $query = "SELECT * FROM meldingen";
             $statement = $conn->prepare($query);
